@@ -1,0 +1,5 @@
+1. Wir befinden uns hier im root. wie du siehst, existiert bereits lp_v1.0 und lp_v1.1. Die nächte version wäre 1.2 usw. 
+2. lp_v1.0 und lp_v1.1, sind momentan identisch. deine aufgabe wird es jetzt sein, lp_v1.1 zu Analysieren und auf Best Praktise zu kontrollieren. Wie steht unsere Landing Page zu anderen Landing Pages!?
+3. Erstelle mir eine Mardowndatei mit einer auflistung von änderungsvorschlägen. solltest du noch andere sachen implementieren wie z.B. effekte, animationen, etc. liste auch diese bitte auf
+4. Wichtig! Fonts werden nicht verändert! Texte werden nicht verändert. Rubriken werden an sich ( inhaltlich) nicht verändert. Farben werden beibehalten! Andere kombinationen sind erlaubt, solange es die selben farben sind.
+5. lp_v1.1 kannst du verändern wie du möchtest! lp_v1.0 dient rein zum lesen. an dieser datei, wird niemals etwas verändert!
