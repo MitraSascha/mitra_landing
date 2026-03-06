@@ -48,8 +48,7 @@ export function ProcessSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-[2rem] p-10 shadow-sm hover:shadow-md transition-all duration-500 border border-[#2c4a5f]/10"
+                className="bg-white rounded-[2rem] p-10 shadow-sm hover:shadow-md hover:scale-[1.02] transition-[transform,box-shadow] duration-200 border border-[#2c4a5f]/10 will-change-transform"
               >
                 <div className="flex items-start gap-6">
                   <div className="relative flex-shrink-0 w-20 h-20 bg-gradient-to-br from-[#e89a4d] to-[#d68938] text-white rounded-2xl flex items-center justify-center shadow-md">

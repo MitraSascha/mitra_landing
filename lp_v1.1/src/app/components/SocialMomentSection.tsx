@@ -5,24 +5,29 @@ export function SocialMomentSection() {
   return (
     <>
       {/* Door Animation Section */}
-      <section className="relative py-20 md:py-32 px-8 md:px-16 lg:px-24 overflow-hidden bg-[#a8d4a8]">
-        <div className="max-w-4xl mx-auto relative">
+      <section className="relative min-h-[500px] md:min-h-[600px] px-8 md:px-16 lg:px-24 overflow-hidden bg-[#a8d4a8] flex items-center justify-center">
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center space-y-6"
+            className="text-center space-y-24"
           >
-            {/* Quote */}
-            <blockquote className="font-outfit text-3xl md:text-4xl lg:text-5xl text-white font-bold leading-tight tracking-tight">
-              "Wow, seit wann habt ihr so ein krasses Bad!"
-            </blockquote>
-            
-            {/* Citation */}
-            <cite className="font-outfit text-lg md:text-xl text-white/90 not-italic font-light">
-              — deine Freunde
-            </cite>
+            {/* Quote + Citation */}
+            <div className="space-y-1">
+              <blockquote className="font-outfit text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight tracking-tight whitespace-nowrap">
+                "Wow, seit wann habt ihr so ein krasses Bad!"
+              </blockquote>
+              <cite className="font-outfit text-lg md:text-xl text-white/90 not-italic font-light">
+                — deine Freunde
+              </cite>
+            </div>
+
+            {/* Subline */}
+            <p className="font-outfit text-lg md:text-xl lg:text-2xl text-[#2c4a5f] italic font-light">
+              Der einzige Moment, den Du nicht mit uns planst, aber garantiert bekommst!
+            </p>
           </motion.div>
         </div>
       </section>

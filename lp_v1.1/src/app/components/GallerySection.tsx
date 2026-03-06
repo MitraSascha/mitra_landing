@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Lightbulb, Wrench } from 'lucide-react';
 import bathroom2 from '../../assets/180c6725224b4ff010857f6e57d5a36e02dcd9fb.png';
 import bathroom3 from '../../assets/6e5e48b78529ab62fb70c015e8c0b362564e3084.png';
@@ -16,7 +16,6 @@ interface Bathroom {
 }
 
 export function GallerySection() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -215,45 +214,26 @@ export function GallerySection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="relative aspect-[3/4] rounded-[3rem] overflow-visible shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.25)] transition-all duration-500 cursor-pointer group"
-                onMouseEnter={() => setHoveredId(bathroom.id)}
-                onMouseLeave={() => setHoveredId(null)}
+                transition={{ duration: 0.15 }}
+                className="relative aspect-[3/4] rounded-[3rem] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.25)] transition-shadow duration-150 cursor-pointer group"
               >
-                <div className="relative w-full h-full rounded-[3rem] overflow-hidden border-4 border-white">
-                  <img
-                    src={bathroom.src}
-                    alt={bathroom.alt}
-                    className="w-full h-full object-cover"
-                    loading={index === 0 ? undefined : 'lazy'}
-                  />
+                {/* Image with blur on hover */}
+                <img
+                  src={bathroom.src}
+                  alt={bathroom.alt}
+                  className="w-full h-full object-cover transition-all duration-150 group-hover:blur-sm group-hover:scale-105"
+                  loading={index === 0 ? undefined : 'lazy'}
+                />
+
+                {/* Testimonial Overlay — fades in on hover */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-10 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="font-outfit font-bold text-white mb-3 text-lg text-center">
+                    {bathroom.testimonial.name}
+                  </p>
+                  <p className="font-outfit text-white/90 text-sm leading-relaxed italic text-center">
+                    {bathroom.testimonial.text}
+                  </p>
                 </div>
-
-                {/* Testimonial Overlay */}
-                <AnimatePresence>
-                  {hoveredId === bathroom.id && (
-                    <motion.div
-                      key="overlay"
-                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                      transition={{ duration: 0.4 }}
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-[2rem] shadow-[0_30px_80px_rgba(0,0,0,0.4)] p-8 max-w-[90%] pointer-events-none z-10 border-2 border-[#2c4a5f]"
-                    >
-                      {/* Tail */}
-                      <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-white rotate-45 border-r-2 border-b-2 border-[#2c4a5f]" />
-
-                      {/* Content */}
-                      <div className="relative z-10">
-                        <p className="font-outfit font-bold text-[#2c4a5f] mb-3 text-lg">
-                          {bathroom.testimonial.name}
-                        </p>
-                        <p className="font-outfit text-[#6B6B6B] text-sm md:text-base leading-relaxed italic">
-                          {bathroom.testimonial.text}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </motion.div>
             </div>
           ))}
