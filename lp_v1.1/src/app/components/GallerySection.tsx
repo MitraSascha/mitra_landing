@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
 import { Lightbulb, Wrench } from 'lucide-react';
-import bathroom2 from '../../assets/180c6725224b4ff010857f6e57d5a36e02dcd9fb.png';
-import bathroom3 from '../../assets/6e5e48b78529ab62fb70c015e8c0b362564e3084.png';
-import bathroom4 from '../../assets/9686a8671b3cef3e3d9557dfeba0a75a840f3a11.png';
+import bathroom2 from '../../assets/Bild neu 2.jpg';
+import bathroom3 from '../../assets/Bild neu 3.jpg';
+import bathroom4 from '../../assets/neues bild.jpg';
 import { useState, useRef, useEffect, useCallback } from 'react';
 
 interface Bathroom {
