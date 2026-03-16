@@ -60,9 +60,29 @@ export function PhilosophySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-32 md:py-40 px-8 md:px-16 lg:px-24 bg-[#2c4a5f]"
+      className="relative py-16 md:py-28 lg:py-40 px-8 md:px-16 lg:px-24 bg-[#2c4a5f] overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto">
+      {/* Floating ambient orbs */}
+      <motion.div
+        animate={{ y: [0, -28, 0], x: [0, 16, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute top-1/4 right-[15%] w-80 h-80 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(232,154,77,0.1) 0%, transparent 70%)', filter: 'blur(50px)' }}
+      />
+      <motion.div
+        animate={{ y: [0, 22, 0], x: [0, -18, 0] }}
+        transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 2.5 }}
+        className="absolute bottom-1/4 left-[20%] w-64 h-64 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(168,212,168,0.12) 0%, transparent 70%)', filter: 'blur(40px)' }}
+      />
+      <motion.div
+        animate={{ y: [0, -18, 0], x: [0, -12, 0] }}
+        transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut', delay: 5 }}
+        className="absolute top-2/3 right-[30%] w-48 h-48 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(44,74,95,0.4) 0%, transparent 70%)', filter: 'blur(35px)' }}
+      />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div ref={textRef} className="relative" style={{ y }}>
           <p className="font-outfit text-3xl md:text-4xl lg:text-5xl text-white leading-[1.3] font-light tracking-tight">
             {splitIntoWords('Dein Bad ist nicht einfach nur funktional – es ist dein täglicher Rückzugsort. Wir optimieren nicht nur Rohre und Fliesen, sondern dein gesamtes Wohlfühl-Erlebnis.')}

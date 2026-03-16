@@ -13,7 +13,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="relative py-32 px-8 md:px-16 lg:px-24 bg-[#e89a4d]">
+    <section className="relative py-16 md:py-24 lg:py-32 px-8 md:px-16 lg:px-24 bg-[#e89a4d]">
       <div className="max-w-5xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,10 +21,10 @@ export function NewsletterSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-outfit text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
+          <h2 className="font-outfit text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
             Deine Vision noch nicht klar genug?
           </h2>
-          <p className="font-outfit text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+          <p className="font-outfit text-lg md:text-xl lg:text-2xl text-white/90 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             Dann sorg dafür, dass sie Form annimmt. Wir schicken dir echte Bäder, echte Ideen, echte Möglichkeiten.
           </p>
 

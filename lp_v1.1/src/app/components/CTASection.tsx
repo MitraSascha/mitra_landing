@@ -43,18 +43,27 @@ export function CTASection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
-          {/* Primary Button - 3D-Visualisierung mit Gradient & Glow */}
-          <button
-            onClick={scrollToKontakt}
-            className="group relative px-10 py-5 rounded-full font-outfit text-base md:text-lg font-semibold text-white bg-gradient-to-r from-[#e89a4d] via-[#a8d4a8] to-[#2c4a5f] transition-all duration-300 hover:scale-105 w-full sm:w-auto overflow-hidden shadow-[0_0_120px_rgba(232,154,77,0.3),0_0_180px_rgba(168,212,168,0.2),0_0_240px_rgba(44,74,95,0.25),0_0_300px_rgba(232,154,77,0.15)] hover:shadow-[0_0_140px_rgba(232,154,77,0.4),0_0_200px_rgba(168,212,168,0.3),0_0_260px_rgba(44,74,95,0.35),0_0_320px_rgba(232,154,77,0.2)]"
-          >
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              <Sparkles className="w-5 h-5" />
-              3D-Visualisierung buchen
-            </span>
-            {/* Animated shine effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-          </button>
+          {/* Primary Button — pulsing halo ring + gradient & glow */}
+          <div className="relative w-full sm:w-auto flex items-center justify-center">
+            {/* Pulsing ring */}
+            <motion.div
+              animate={{ scale: [1, 1.14, 1], opacity: [0.55, 0, 0.55] }}
+              transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-[#e89a4d] via-[#a8d4a8] to-[#2c4a5f] pointer-events-none"
+              style={{ filter: 'blur(10px)' }}
+            />
+            <button
+              onClick={scrollToKontakt}
+              className="group relative px-10 py-5 rounded-full font-outfit text-base md:text-lg font-semibold text-white bg-gradient-to-r from-[#e89a4d] via-[#a8d4a8] to-[#2c4a5f] transition-all duration-300 hover:scale-105 w-full sm:w-auto overflow-hidden shadow-[0_0_120px_rgba(232,154,77,0.3),0_0_180px_rgba(168,212,168,0.2),0_0_240px_rgba(44,74,95,0.25),0_0_300px_rgba(232,154,77,0.15)] hover:shadow-[0_0_140px_rgba(232,154,77,0.4),0_0_200px_rgba(168,212,168,0.3),0_0_260px_rgba(44,74,95,0.35),0_0_320px_rgba(232,154,77,0.2)]"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <Sparkles className="w-5 h-5" />
+                3D-Visualisierung buchen
+              </span>
+              {/* Animated shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </button>
+          </div>
 
           {/* Secondary Button - Bad Sanierung anfragen - Subtiler */}
           <button

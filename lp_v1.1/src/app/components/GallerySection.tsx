@@ -110,10 +110,10 @@ export function GallerySection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-8 md:mb-10 px-6 md:px-16 lg:px-24"
         >
           <h2 className="font-outfit italic text-4xl md:text-5xl lg:text-7xl font-bold text-[#2c4a5f] mb-1 tracking-tight leading-tight">
@@ -157,20 +157,17 @@ export function GallerySection() {
                 }}
               >
                 {/* Image */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border-4 border-white shadow-[0_16px_40px_rgba(0,0,0,0.15)]"
-                >
+                <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden border-4 border-white shadow-[0_16px_40px_rgba(0,0,0,0.15)] bg-[#e8e2d8]">
                   <img
                     src={bathroom.src}
                     alt={bathroom.alt}
-                    className="w-full h-full object-cover"
-                    loading={index === 0 ? undefined : 'lazy'}
+                    className="w-full h-full object-cover opacity-0"
+                    style={{ transition: 'opacity 600ms ease-in-out' }}
+                    loading="lazy"
+                    onLoad={(e) => (e.currentTarget.style.opacity = '1')}
+                    ref={(el) => { if (el?.complete) el.style.opacity = '1'; }}
                   />
-                </motion.div>
+                </div>
 
                 {/* Testimonial Card — always visible on mobile */}
                 <div className="mt-4 bg-white rounded-2xl shadow-sm border border-white/60 px-5 py-4">
@@ -204,25 +201,30 @@ export function GallerySection() {
           </div>
         </div>
 
-        {/* ── DESKTOP: 2×2 Grid with hover overlay ── */}
+        {/* ── DESKTOP: 2×2 Grid with smooth fade-lift reveal ── */}
         <div className="hidden md:grid md:grid-cols-2 gap-8 px-8 md:px-16 lg:px-24">
           {bathrooms.map((bathroom, index) => (
-            <div key={bathroom.id} className="relative">
+            <div key={bathroom.id} className="relative h-full">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.15 }}
-                className="relative aspect-[3/4] rounded-[3rem] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.25)] transition-shadow duration-150 cursor-pointer group"
+                initial={{ opacity: 0, y: 55, scale: 0.94 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 1.1,
+                  delay: index * 0.14,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="relative aspect-[3/4] rounded-[3rem] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.25)] transition-[box-shadow,transform] duration-300 hover:scale-[1.02] cursor-pointer group bg-[#e8e2d8]"
               >
-                {/* Image with blur on hover */}
+                {/* Image — fades in on load, hover effects via CSS */}
                 <img
                   src={bathroom.src}
                   alt={bathroom.alt}
-                  className="w-full h-full object-cover transition-all duration-150 group-hover:blur-sm group-hover:scale-105"
-                  loading={index === 0 ? undefined : 'lazy'}
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:blur-sm group-hover:scale-105"
+                  style={{ transition: 'opacity 700ms ease-in-out, filter 300ms, transform 300ms' }}
+                  loading="lazy"
+                  onLoad={(e) => (e.currentTarget.style.opacity = '1')}
+                  ref={(el) => { if (el?.complete) el.style.opacity = '1'; }}
                 />
 
                 {/* Testimonial Overlay — fades in on hover */}
