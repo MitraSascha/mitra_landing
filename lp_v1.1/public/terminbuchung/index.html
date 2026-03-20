@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termin buchen – MITRA Sanitär</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Header ────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="header-badge">
+      <span class="hbadge-dot"></span>
+      Kostenlos &amp; unverbindlich
+    </div>
+  </div>
+</header>
+
+<!-- ── Trust Strip ───────────────────────────────────── -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">✓</div>
+      Schnelle Bestätigung
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-icon">★</div>
+      Persönliche Fachberatung
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-icon">◷</div>
+      Antwort in 24 h
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Content ──────────────────────────────────── -->
+<main class="page-wrap">
+
+  <!-- Stepper -->
+  <div class="progress-bar">
+    <div class="step-item">
+      <div class="step-dot active" id="dot1"><span>1</span></div>
+      <div class="step-label active" id="lbl1">Tag</div>
+    </div>
+    <div class="step-connector" id="conn1"></div>
+    <div class="step-item">
+      <div class="step-dot" id="dot2"><span>2</span></div>
+      <div class="step-label" id="lbl2">Uhrzeit</div>
+    </div>
+    <div class="step-connector" id="conn2"></div>
+    <div class="step-item">
+      <div class="step-dot" id="dot3"><span>3</span></div>
+      <div class="step-label" id="lbl3">Kontakt</div>
+    </div>
+  </div>
+
+  <!-- ══════ SCHRITT 1 ══════ -->
+  <div id="step1" class="step-panel">
+    <div class="section-head">
+      <div class="section-title">Wähle deinen Wunschtag</div>
+      <div class="section-sub">Jeder Tag ist direkt einem persönlichen Fachberater zugeordnet.</div>
+    </div>
+
+    <div class="day-grid">
+      <div class="card day-card" data-day="Mittwoch" data-person="Michael B." data-initials="MB">
+        <div class="day-card-header">
+          <span class="day-badge">Tag 1</span>
+          <span class="day-avail">7 Slots frei</span>
+        </div>
+        <div class="day-name">Mittwoch</div>
+        <div class="day-slots">30-Min-Slots · 08:00 – 15:00 Uhr</div>
+        <div class="day-person">
+          <div class="avatar">MS</div>
+          <div class="person-info">
+            <div class="person-name">Milo Sekulovic</div>
+            <div class="person-role">Fachberater Bad &amp; Sanitär</div>
+          </div>
+          <div class="check-indicator"></div>
+        </div>
+      </div>
+
+      <div class="card day-card" data-day="Donnerstag" data-person="Sandra K." data-initials="SK">
+        <div class="day-card-header">
+          <span class="day-badge">Tag 2</span>
+          <span class="day-avail">9 Slots frei</span>
+        </div>
+        <div class="day-name">Donnerstag</div>
+        <div class="day-slots">30-Min-Slots · 08:00 – 15:00 Uhr</div>
+        <div class="day-person">
+          <div class="avatar sk">PD</div>
+          <div class="person-info">
+            <div class="person-name">Patrick van Dalen</div>
+            <div class="person-role">Fachberaterin Bad &amp; Sanitär</div>
+          </div>
+          <div class="check-indicator"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <div></div>
+      <button class="btn-primary btn-inline" id="btn1Next" disabled onclick="goTo(2)">
+        Weiter zur Uhrzeitwahl
+        <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════ SCHRITT 2 ══════ -->
+  <div id="step2" class="step-panel hidden">
+    <div class="section-head">
+      <div class="section-title">Wähle deine Uhrzeit</div>
+      <div class="section-sub" id="step2Sub">Bitte wähle einen freien 30-Minuten-Slot.</div>
+    </div>
+
+    <div class="time-grid" id="timeGrid"></div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goTo(1)">
+        <svg viewBox="0 0 16 16" fill="none" width="14"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="btn-back-text">Zurück</span>
+      </button>
+      <button class="btn-primary btn-inline" id="btn2Next" disabled onclick="goTo(3)">
+        Weiter zu Kontaktdaten
+        <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════ SCHRITT 3 ══════ -->
+  <div id="step3" class="step-panel hidden">
+    <div class="section-head">
+      <div class="section-title">Deine Kontaktdaten</div>
+      <div class="section-sub">Deine Daten werden sicher übertragen und der Termin wird final bestätigt.</div>
+    </div>
+
+    <div class="step3-layout">
+      <!-- Formular -->
+      <div class="form-col">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f_name">Name *</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <input type="text" id="f_name" placeholder="Max Mustermann" autocomplete="name" />
+            </div>
+            <p class="field-error-msg" id="err_name">Bitte gib deinen Namen ein.</p>
+          </div>
+          <div class="form-group">
+            <label for="f_phone">Telefon *</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 20 20" fill="none"><path d="M3 4.5A1.5 1.5 0 014.5 3h1.379a1.5 1.5 0 011.418 1.011l.738 2.216a1.5 1.5 0 01-.34 1.548L6.85 8.619a9.045 9.045 0 004.531 4.531l.844-.845a1.5 1.5 0 011.548-.34l2.216.738A1.5 1.5 0 0117 14.121V15.5A1.5 1.5 0 0115.5 17h-.5C8.373 17 3 11.627 3 5v-.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+              <input type="tel" id="f_phone" placeholder="0151 12345678" autocomplete="tel" />
+            </div>
+            <p class="field-error-msg" id="err_phone">Bitte gib deine Telefonnummer ein.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="f_email">E-Mail *</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 20 20" fill="none"><path d="M2 6l8 5 8-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+            <input type="email" id="f_email" placeholder="max@beispiel.de" autocomplete="email" />
+          </div>
+          <p class="field-error-msg" id="err_email">Bitte gib eine gültige E-Mail-Adresse ein.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="f_address">Adresse / Einsatzort</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 20 20" fill="none"><path d="M10 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M10 2C6.686 2 4 4.686 4 8c0 5 6 10 6 10s6-5 6-10c0-3.314-2.686-6-6-6z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <input type="text" id="f_address" placeholder="Musterstraße 1, 12345 Musterstadt" autocomplete="street-address" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="f_message">Anliegen</label>
+          <div class="input-wrap">
+            <svg class="input-icon icon-top" viewBox="0 0 20 20" fill="none"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H6l-4 3V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <textarea id="f_message" placeholder="Kurze Beschreibung deines Anliegens …"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Zusammenfassung -->
+      <div class="summary-card">
+        <div class="summary-title">Deine Buchung</div>
+        <div class="summary-row">
+          <span class="summary-label">Tag</span>
+          <span class="summary-value" id="sum_day">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Berater</span>
+          <span class="summary-value" id="sum_person">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Uhrzeit</span>
+          <span class="summary-value" id="sum_time">—</span>
+        </div>
+        <button class="btn-primary" id="btnSubmit2" onclick="submitForm()" disabled>
+          Termin anfragen
+          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Disclaimer + Button AUSSERHALB step3-layout → auf Mobile unter "Deine Buchung" -->
+    <div class="disclaimer-wrap" id="disclaimerWrap">
+      <label class="disclaimer-check-label" for="f_privacy">
+        <input type="checkbox" id="f_privacy" class="disclaimer-check" />
+        <span class="disclaimer-check-box"></span>
+        <span class="disclaimer-text">
+          Ich habe die <a href="#" class="disclaimer-link">Datenschutzerklärung</a> gelesen und stimme zu. Der Slot wird nach Eingang geprüft und final bestätigt – ich erhalte eine Rückmeldung per E-Mail.
+        </span>
+      </label>
+      <p class="field-error-msg" id="err_privacy">Bitte stimme der Datenschutzerklärung zu, um fortzufahren.</p>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-back" onclick="goTo(2)">
+        <svg viewBox="0 0 16 16" fill="none" width="14"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="btn-back-text">Zurück</span>
+      </button>
+      <button class="btn-primary btn-inline" id="btnSubmit" onclick="submitForm()" disabled>
+        Termin anfragen
+        <svg class="btn-arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════ ERFOLG ══════ -->
+  <div class="success-screen hidden" id="successScreen">
+    <div class="success-icon-wrap">
+      <div class="success-ring-2"></div>
+      <div class="success-ring"></div>
+      <div class="success-icon">✓</div>
+    </div>
+    <h2>Anfrage gesendet!</h2>
+    <p>Deine Terminanfrage wurde erfolgreich übermittelt.</p>
+    <p id="successDetail"></p>
+    <p class="success-note">Wir melden uns innerhalb von 24 Stunden – versprochen.</p>
+  </div>
+
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

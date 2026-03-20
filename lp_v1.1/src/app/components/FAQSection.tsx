@@ -31,7 +31,7 @@ const faqs: FAQItem[] = [
   {
     question: 'Was ist der erste Schritt?',
     answer:
-      'Ein kostenloses, unverbindliches Erstgespräch. Ruf uns an oder schreib uns – wir melden uns innerhalb von 24 Stunden.',
+      'Ein kostenloses, unverbindliches Erstgespräch. Buche einen Termin oder fülle das Kontaktformular aus.',
   },
 ];
 

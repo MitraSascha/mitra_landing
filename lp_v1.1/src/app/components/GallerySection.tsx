@@ -26,8 +26,8 @@ export function GallerySection() {
       src: 'https://images.unsplash.com/photo-1758548157466-7c454382035a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBsdXh1cnklMjBiYXRocm9vbSUyMHdoaXRlJTIwYmF0aHR1YnxlbnwxfHx8fDE3NzIxODc0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       alt: 'Modernes Badezimmer mit freistehender weißer Badewanne',
       testimonial: {
-        name: 'Julia M., 38',
-        text: '„Wir hätten nie gedacht, wie persönlich ein Bad werden kann. Bei Mitra konnten wir alles mitgestalten – und genau das sieht man jeden Tag. Es fühlt sich einfach richtig an."',
+        name: 'Lena',
+        text: '„Lena und ich sind hin und weg von dem Bad was uns die Jungs von „Mitra“ in die Wohnung gehauen haben. Das ist alles so fein und sauber verarbeitet. Auch das Design ist Hammer! Das sind Profis und das merkt man an jeder Stelle - auch die Kommunikation und die Umsetzung war super. Wir haben uns in allen Punkten mitgenommen gefühlt und wussten wir können uns jederzeit melden. Wir sind begeistert und würden jederzeit wieder mit „Mitra“ arbeiten!"',
       },
     },
     {

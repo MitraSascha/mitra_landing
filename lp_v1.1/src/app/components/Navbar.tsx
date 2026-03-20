@@ -58,16 +58,16 @@ export function Navbar() {
 
           {/* Desktop CTA Button + Mobile Hamburger */}
           <div className="flex items-center gap-4">
-            <button
+            <a
+              href="/lp_v1.0/terminbuchung/"
               className="hidden md:flex group relative px-5 py-2.5 rounded-full font-outfit text-sm font-semibold text-white bg-gradient-to-r from-[#e89a4d] via-[#a8d4a8] to-[#2c4a5f] transition-all duration-300 hover:scale-105 overflow-hidden shadow-[0_0_40px_rgba(232,154,77,0.25)] hover:shadow-[0_0_60px_rgba(232,154,77,0.4)] items-center gap-2"
-              onClick={() => handleNavClick('#kontakt')}
             >
               <span className="relative z-10 flex items-center gap-2">
                 <Sparkles className="w-4 h-4" />
                 3D-Visualisierung buchen
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            </button>
+            </a>
 
             <button
               className="md:hidden flex items-center justify-center w-9 h-9 text-white/80 hover:text-white"

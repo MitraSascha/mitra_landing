@@ -1,27 +1,25 @@
 import { motion } from 'motion/react';
-import { Umbrella } from 'lucide-react';
+import vacationImg from '../../assets/b25dd357f77660bdc50b9552fac30c25464da467.png';
 
 export function VacationQuoteSection() {
   return (
     <section className="relative py-20 md:py-28 px-8 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
 
-          {/* Left Side — image block with clip-path reveal */}
+          {/* Left Side — Bild */}
           <motion.div
             initial={{ clipPath: 'inset(0 0 100% 0 round 1.5rem)', opacity: 0 }}
             whileInView={{ clipPath: 'inset(0 0 0% 0 round 1.5rem)', opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-3xl p-8 md:p-12 flex items-center justify-center mb-8 lg:mb-0 overflow-hidden"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1653823478413-0c4617d0c406?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMHNwYSUyMGJhdGhyb29tJTIwcmVzb3J0JTIwdmFjYXRpb258ZW58MXx8fHwxNzcyMTg3NjM3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}
+            className="rounded-3xl overflow-hidden mb-8 lg:mb-0 aspect-square"
           >
-            <div className="absolute inset-0 bg-[#2c4a5f]/70"></div>
-            <Umbrella className="relative z-10 w-20 h-20 md:w-32 md:h-32 text-[#a8d4a8]" strokeWidth={1.5} />
+            <img
+              src={vacationImg}
+              alt="Badezimmer Erholungsort"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
 
           {/* Right Side — text content */}
@@ -31,13 +29,9 @@ export function VacationQuoteSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-y-8 flex flex-col justify-center h-full"
+              className="space-y-6 flex flex-col justify-center h-full"
             >
-              <p className="font-outfit text-lg md:text-xl lg:text-2xl text-[#6B6B6B] leading-relaxed font-light">
-                Wenn du schon so viel Zeit im Bad verbringst, dann hol dir das Urlaubsgefühl nach Hause und verwandle dein Bad in deinen individuell gestalteten Erholungsort.
-              </p>
-
-              {/* Statement with animated gradient line */}
+              {/* Heading + Body neben dem Balken */}
               <div className="relative pl-8">
                 <motion.div
                   initial={{ scaleY: 0 }}
@@ -47,8 +41,11 @@ export function VacationQuoteSection() {
                   style={{ originY: 0 }}
                   className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#e89a4d] via-[#a8d4a8] to-[#2c4a5f] rounded-full"
                 />
-                <p className="font-outfit text-2xl md:text-3xl lg:text-5xl text-[#2c4a5f] font-bold tracking-tight leading-[1.1]">
+                <p className="font-outfit text-2xl md:text-3xl lg:text-5xl text-[#2c4a5f] font-bold tracking-tight leading-[1.1] mb-4">
                   Weil du nie genug Urlaubstage haben kannst!
+                </p>
+                <p className="font-outfit text-base md:text-lg lg:text-xl text-[#6B6B6B] leading-relaxed font-light">
+                  Wenn du schon so viel Zeit im Bad verbringst, dann hol dir das Urlaubsgefühl nach Hause und verwandle dein Bad in deinen individuell gestalteten Erholungsort.
                 </p>
               </div>
             </motion.div>

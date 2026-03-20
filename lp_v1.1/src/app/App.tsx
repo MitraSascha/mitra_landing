@@ -20,8 +20,8 @@ export default function App() {
         <SocialMomentSection />
         <PhilosophySection />
         <GallerySection />
-        <ProcessSection />
         <NewsletterSection />
+        <ProcessSection />
         <CTASection />
         <FAQSection />
       </main>
