@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import paletteCad from '../../assets/Palette CAD.png';
 
 export function CTASection() {
   const scrollToKontakt = () => {
@@ -85,8 +86,8 @@ export function CTASection() {
           {/* 3D Visualization - Compact */}
           <div className="relative group w-[140px] sm:w-[185px] md:w-[228px]">
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1650894622072-1596836c2ad2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHwzRCUyMGJhdGhyb29tJTIwdmlzdWFsaXphdGlvbiUyMHJlbmRlcnxlbnwxfHx8fDE3NzIxOTc4NDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              <img
+                src={paletteCad}
                 alt="3D Visualisierung"
                 className="w-full h-[110px] sm:h-[143px] md:h-[166px] object-cover contrast-[1.05]"
               />
