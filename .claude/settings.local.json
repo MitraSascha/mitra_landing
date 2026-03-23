@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(npx tsc:*)",
-      "Bash(./node_modules/.bin/vite build:*)"
+      "Bash(./node_modules/.bin/vite build:*)",
+      "Bash(find /home/sascha/projects/mitra_landing/lp_v1.2/src -not -path */node_modules/* -type f)",
+      "Bash(ls -la /home/sascha/projects/mitra_landing/lp_v1.2/src/app/components/*.tsx)",
+      "Bash(grep \"\\\\.tsx$\")"
     ]
   }
 }

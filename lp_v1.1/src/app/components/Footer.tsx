@@ -92,14 +92,18 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="flex flex-wrap justify-center gap-8 mb-10"
         >
-          {['Impressum', 'Datenschutz', 'AGB'].map((item) => (
+          {[
+            { label: 'Impressum', href: `${import.meta.env.BASE_URL}impressum.html` },
+            { label: 'Datenschutz', href: `${import.meta.env.BASE_URL}datenschutz.html` },
+            { label: 'AGB', href: '#' },
+          ].map((item) => (
             <motion.a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="font-outfit text-sm text-white/60 hover:text-white transition-all duration-300 relative group"
               whileHover={{ y: -2 }}
             >
-              {item}
+              {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#e89a4d] transition-all duration-300 group-hover:w-full" />
             </motion.a>
           ))}

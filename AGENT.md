@@ -1,5 +1,30 @@
-1. Wir befinden uns hier im root. wie du siehst, existiert bereits lp_v1.0 und lp_v1.1. Die nächte version wäre 1.2 usw. 
-2. lp_v1.0 und lp_v1.1, sind momentan identisch. deine aufgabe wird es jetzt sein, lp_v1.1 zu Analysieren und auf Best Praktise zu kontrollieren. Wie steht unsere Landing Page zu anderen Landing Pages!?
-3. Erstelle mir eine Mardowndatei mit einer auflistung von änderungsvorschlägen. solltest du noch andere sachen implementieren wie z.B. effekte, animationen, etc. liste auch diese bitte auf
-4. Wichtig! Fonts werden nicht verändert! Texte werden nicht verändert. Rubriken werden an sich ( inhaltlich) nicht verändert. Farben werden beibehalten! Andere kombinationen sind erlaubt, solange es die selben farben sind.
-5. lp_v1.1 kannst du verändern wie du möchtest! lp_v1.0 dient rein zum lesen. an dieser datei, wird niemals etwas verändert!
+1. Wir haben die Rubrik mit den Karten:
+
+- "Wow, seit wann habt ihr so ein krasses Bad!"
+- Der einzige Moment, den du nicht mit uns planst, aber garantiert bekommst.
+
+Die übergänge gefallen mir absolut gr nicht! kannst du das irgendwie verbessern?
+
+2. Wir haben die Rubrik mit den Karten:
+
+- Lichtkonzept
+Atmosphäre Design
+- Raumoptimierung
+Intelligente Planung
+- Fliesenauswahl
+Premium-Materialien
+
+An sich finde ich den effekt gut! Aber beim scrollen, sieht man die alten karten. Gerne auch ähnliche effekte verwenden wie: Karten kippen beim scrollen weg, Karten kommen auf einen zu und verschwinden dann usw.
+
+3. Wir haben die Rubrik mit den Karten:
+
+- 3D-Visualisierung
+Durch unsere 3D-Visualisierung siehst du was möglich ist und bekommst einen realistischen Vorgeschmack auf dein neues Mitra-Bad.
+- Verbindliches Angebot
+Durch ein verbindliches Angebot stellst Du sicher, dass der Preis von Anfang an klar ist.
+- Klarer Ablaufplan
+Durch einen klaren Ablauf- und Terminplan stellen wir gemeinsam sicher, dass du genau weißt wann dein neues Bad fertig ist.
+- Saubere Arbeit
+... und keine Sorge deine zu Hause bleibt sauber.
+
+Selbe wie Punkt 2. 
