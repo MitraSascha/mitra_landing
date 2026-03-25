@@ -390,6 +390,13 @@ header {
   color: #1b3143;
 }
 
+.day-date {
+  font-size: var(--tx-sm);
+  font-weight: 600;
+  color: #1b3143;
+  margin-bottom: 6px;
+}
+
 .day-slots {
   font-size: var(--tx-xs);
   color: #3d5a47;

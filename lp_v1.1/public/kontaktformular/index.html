@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – MITRA Sanitär</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Header ────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="header-badge">
+      <span class="hbadge-dot"></span>
+      Kostenlos &amp; unverbindlich
+    </div>
+  </div>
+</header>
+
+<!-- ── Trust Strip ───────────────────────────────────────── -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">✓</div>
+      Schnelle Rückmeldung
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-icon">★</div>
+      Persönliche Beratung
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-icon">◷</div>
+      Antwort in 24 h
+    </div>
+  </div>
+</div>
+
+<!-- ── Main ──────────────────────────────────────────────── -->
+<main class="page-wrap">
+
+  <!-- Form Card -->
+  <div class="form-card" id="formCard">
+
+    <div class="form-card-head">
+      <h1 class="form-title">Schreib uns</h1>
+      <p class="form-sub">Schildere uns dein Anliegen – wir melden uns persönlich bei dir.</p>
+    </div>
+
+    <!-- Quick-Contact -->
+    <div class="quick-contact">
+      <a href="tel:+49XXXXXXXXXX" class="qc-item">
+        <div class="qc-icon">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M3 4.5A1.5 1.5 0 014.5 3h1.379a1.5 1.5 0 011.418 1.011l.738 2.216a1.5 1.5 0 01-.34 1.548L6.85 8.619a9.045 9.045 0 004.531 4.531l.844-.845a1.5 1.5 0 011.548-.34l2.216.738A1.5 1.5 0 0117 14.121V15.5A1.5 1.5 0 0115.5 17h-.5C8.373 17 3 11.627 3 5v-.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="qc-text">
+          <div class="qc-label">Lieber direkt anrufen?</div>
+          <div class="qc-value">Jetzt anrufen</div>
+        </div>
+      </a>
+      <div class="qc-sep"></div>
+      <a href="https://wa.me/49XXXXXXXXXX" target="_blank" class="qc-item">
+        <div class="qc-icon qc-icon--green">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.856L.057 23.215a.75.75 0 00.928.928l5.36-1.475A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.98 0-3.83-.54-5.42-1.48l-.389-.23-4.028 1.108 1.108-4.028-.23-.389A9.966 9.966 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        </div>
+        <div class="qc-text">
+          <div class="qc-label">Lieber per WhatsApp?</div>
+          <div class="qc-value">Nachricht senden</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="divider">
+      <span>oder Formular nutzen</span>
+    </div>
+
+    <!-- Themen-Chips -->
+    <div class="chips-section">
+      <div class="chips-label">Worum geht es?</div>
+      <div class="chips-grid" id="chipsGrid">
+        <button type="button" class="chip" data-topic="Badezimmer sanieren">Badezimmer sanieren</button>
+        <button type="button" class="chip" data-topic="3D Visualisierung">3D Visualisierung</button>
+        <button type="button" class="chip" data-topic="Kostenvoranschlag">Kostenvoranschlag</button>
+        <button type="button" class="chip" data-topic="Allgemeine Frage">Allgemeine Frage</button>
+      </div>
+      <p class="field-error-msg" id="err_topic">Bitte wähle ein Thema aus.</p>
+    </div>
+
+    <!-- Formular-Felder -->
+    <div class="fields">
+
+      <div class="field-row">
+        <div class="field-group">
+          <div class="float-wrap">
+            <input type="text" id="f_name" class="float-input" placeholder=" " autocomplete="name" />
+            <label for="f_name" class="float-label">Name *</label>
+          </div>
+          <p class="field-error-msg" id="err_name">Bitte gib deinen Namen ein.</p>
+        </div>
+        <div class="field-group">
+          <div class="float-wrap">
+            <input type="tel" id="f_phone" class="float-input" placeholder=" " autocomplete="tel" />
+            <label for="f_phone" class="float-label">Telefon *</label>
+          </div>
+          <p class="field-error-msg" id="err_phone">Bitte gib deine Telefonnummer ein.</p>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="float-wrap">
+          <input type="email" id="f_email" class="float-input" placeholder=" " autocomplete="email" />
+          <label for="f_email" class="float-label">E-Mail *</label>
+        </div>
+        <p class="field-error-msg" id="err_email">Bitte gib eine gültige E-Mail-Adresse ein.</p>
+      </div>
+
+      <div class="field-group">
+        <div class="float-wrap">
+          <input type="text" id="f_address" class="float-input" placeholder=" " autocomplete="street-address" />
+          <label for="f_address" class="float-label">Adresse / Einsatzort</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="float-wrap float-wrap--textarea">
+          <textarea id="f_message" class="float-input float-textarea" placeholder=" " maxlength="800"></textarea>
+          <label for="f_message" class="float-label">Deine Nachricht</label>
+        </div>
+        <div class="char-counter"><span id="charCount">0</span> / 800</div>
+      </div>
+
+    </div>
+
+    <!-- DSGVO -->
+    <div class="disclaimer-wrap" id="disclaimerWrap">
+      <label class="disclaimer-check-label" for="f_privacy">
+        <input type="checkbox" id="f_privacy" class="disclaimer-check" />
+        <span class="disclaimer-check-box"></span>
+        <span class="disclaimer-text">
+          Ich habe die <a href="../datenschutz.html" target="_blank" class="disclaimer-link">Datenschutzerklärung</a> gelesen und stimme zu.
+        </span>
+      </label>
+      <p class="field-error-msg" id="err_privacy">Bitte stimme der Datenschutzerklärung zu.</p>
+    </div>
+
+    <!-- Submit -->
+    <button class="btn-submit" id="btnSubmit" onclick="submitForm()">
+      Nachricht senden
+      <svg class="btn-arrow" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- ══════ ERFOLG ══════ -->
+  <div class="success-screen hidden" id="successScreen">
+    <div class="success-icon-wrap">
+      <div class="success-ring-2"></div>
+      <div class="success-ring"></div>
+      <div class="success-icon">✓</div>
+    </div>
+    <h2>Nachricht gesendet!</h2>
+    <p>Deine Anfrage wurde erfolgreich übermittelt.</p>
+    <p id="successDetail"></p>
+  </div>
+
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

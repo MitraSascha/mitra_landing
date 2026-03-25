@@ -69,41 +69,7 @@
       <div class="section-sub">Jeder Tag ist direkt einem persönlichen Fachberater zugeordnet.</div>
     </div>
 
-    <div class="day-grid">
-      <div class="card day-card" data-day="Mittwoch" data-person="Michael B." data-initials="MB">
-        <div class="day-card-header">
-          <span class="day-badge">Tag 1</span>
-          <span class="day-avail">7 Slots frei</span>
-        </div>
-        <div class="day-name">Mittwoch</div>
-        <div class="day-slots">30-Min-Slots · 08:00 – 15:00 Uhr</div>
-        <div class="day-person">
-          <div class="avatar">MS</div>
-          <div class="person-info">
-            <div class="person-name">Milo Sekulovic</div>
-            <div class="person-role">Fachberater Bad &amp; Sanitär</div>
-          </div>
-          <div class="check-indicator"></div>
-        </div>
-      </div>
-
-      <div class="card day-card" data-day="Donnerstag" data-person="Sandra K." data-initials="SK">
-        <div class="day-card-header">
-          <span class="day-badge">Tag 2</span>
-          <span class="day-avail">9 Slots frei</span>
-        </div>
-        <div class="day-name">Donnerstag</div>
-        <div class="day-slots">30-Min-Slots · 08:00 – 15:00 Uhr</div>
-        <div class="day-person">
-          <div class="avatar sk">PD</div>
-          <div class="person-info">
-            <div class="person-name">Patrick van Dalen</div>
-            <div class="person-role">Fachberaterin Bad &amp; Sanitär</div>
-          </div>
-          <div class="check-indicator"></div>
-        </div>
-      </div>
-    </div>
+    <div class="day-grid" id="dayGrid"></div>
 
     <div class="btn-row">
       <div></div>
@@ -199,6 +165,10 @@
           <span class="summary-value" id="sum_day">—</span>
         </div>
         <div class="summary-row">
+          <span class="summary-label">Datum</span>
+          <span class="summary-value" id="sum_date">—</span>
+        </div>
+        <div class="summary-row">
           <span class="summary-label">Berater</span>
           <span class="summary-value" id="sum_person">—</span>
         </div>
@@ -219,7 +189,7 @@
         <input type="checkbox" id="f_privacy" class="disclaimer-check" />
         <span class="disclaimer-check-box"></span>
         <span class="disclaimer-text">
-          Ich habe die <a href="#" class="disclaimer-link">Datenschutzerklärung</a> gelesen und stimme zu. Der Slot wird nach Eingang geprüft und final bestätigt – ich erhalte eine Rückmeldung per E-Mail.
+          Ich habe die <a href="../datenschutz.html" target="_blank" class="disclaimer-link">Datenschutzerklärung</a> gelesen und stimme zu. Der Slot wird nach Eingang geprüft und final bestätigt – ich erhalte eine Rückmeldung per E-Mail.
         </span>
       </label>
       <p class="field-error-msg" id="err_privacy">Bitte stimme der Datenschutzerklärung zu, um fortzufahren.</p>
@@ -247,7 +217,6 @@
     <h2>Anfrage gesendet!</h2>
     <p>Deine Terminanfrage wurde erfolgreich übermittelt.</p>
     <p id="successDetail"></p>
-    <p class="success-note">Wir melden uns innerhalb von 24 Stunden – versprochen.</p>
   </div>
 
 </main>

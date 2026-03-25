@@ -165,7 +165,7 @@ export function CTASection() {
           </a>
 
           {/* Button 2 - Kontaktformular - Blau */}
-          <a href="/lp_v1.0/terminbuchung/" className="group relative px-8 py-4 rounded-full font-outfit text-base md:text-lg font-semibold text-white bg-[#2c4a5f] transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto sm:flex-1 sm:max-w-xs overflow-hidden flex items-center justify-center">
+          <a href="/lp_v1.0/kontaktformular/" className="group relative px-8 py-4 rounded-full font-outfit text-base md:text-lg font-semibold text-white bg-[#2c4a5f] transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto sm:flex-1 sm:max-w-xs overflow-hidden flex items-center justify-center">
             <span className="relative z-10">Kontaktformular</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
           </a>
