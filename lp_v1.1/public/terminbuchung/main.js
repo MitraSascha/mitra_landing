@@ -50,7 +50,7 @@ function parseBusyData(busy) {
     d.setDate(today.getDate() + i);
     const dayName = dayNames[d.getDay()];
     if (!BOOKING_DAYS.includes(dayName)) continue;
-    const isoDate = d.toISOString().slice(0, 10);
+    const isoDate = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     bookingDays.push({ dayName, isoDate });
   }
 

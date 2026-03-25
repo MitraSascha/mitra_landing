@@ -2,7 +2,7 @@
    MITRA Sanitär – Kontaktformular
    ══════════════════════════════════════════════════════════ */
 
-const WEBHOOK_URL = 'https://DEINE-N8N-INSTANZ/webhook/kontakt';
+const WEBHOOK_URL = 'https://n8n.tech-artist.de/webhook/ee3e6930-0198-4fd2-a6df-ce807184a293';
 
 // ── Zustand ──────────────────────────────────────────────
 let selectedTopic = null;

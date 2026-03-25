@@ -58,8 +58,16 @@ export function SocialMomentSection() {
       </div>
 
       {/* Drop Logo Section */}
-      <section className="relative pt-10 pb-0 md:py-20 lg:py-28 md:px-16 lg:px-24 overflow-hidden">
-        <div className="max-w-7xl md:mx-auto">
+      <section className="relative pt-10 pb-0 md:pt-4 md:pb-0 lg:pt-4 lg:pb-0 overflow-hidden">
+
+        {/* Tablet + Desktop: Bild direkt an Section (full-width), links = Viewport-Rand */}
+        <img
+          src={bathroomImg}
+          alt="Mitra Drop Logo"
+          className="hidden md:block absolute bottom-0 left-0 w-[60%] lg:w-[38vw] object-contain"
+        />
+
+        <div className="max-w-7xl md:mx-auto md:pr-16 lg:pr-24">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -68,15 +76,15 @@ export function SocialMomentSection() {
             className="relative"
           >
 
-            {/* Mobile: Bild unten links, 1/3 abgeschnitten */}
+            {/* Mobile: Bild unten links */}
             <div className="md:hidden relative min-h-[420px] overflow-hidden">
               <img
                 src={bathroomImg}
                 alt="Mitra Drop Logo"
-                className="absolute bottom-[-25%] left-[-34%] w-[135%] object-contain"
+                className="absolute bottom-0 left-0 w-[100%] object-contain"
               />
               {/* Text oben rechts */}
-              <div className="absolute top-4 right-[67px] w-[65%]">
+              <div className="absolute top-4 right-[67px] w-[52%]">
                 <div className="relative pl-4">
                   <motion.div
                     initial={{ scaleY: 0 }}
@@ -93,14 +101,9 @@ export function SocialMomentSection() {
               </div>
             </div>
 
-            {/* Desktop: bisheriges Layout */}
-            <div className="hidden md:block relative">
-              <img
-                src={bathroomImg}
-                alt="Mitra Drop Logo"
-                className="w-full object-contain"
-              />
-              <div className="absolute top-[52%] left-[8%] w-[58%]">
+            {/* Tablet + Desktop: Text oben rechts */}
+            <div className="hidden md:block relative min-h-[520px] lg:min-h-[640px]">
+              <div className="absolute top-8 right-[25%] w-[42%] lg:w-[38%]">
                 <div className="relative pl-6">
                   <motion.div
                     initial={{ scaleY: 0 }}
@@ -110,10 +113,7 @@ export function SocialMomentSection() {
                     style={{ originY: 0 }}
                     className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-[#e89a4d] via-[#a8d4a8] to-[#2c4a5f] rounded-full"
                   />
-                  <p
-                    className="font-outfit text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2] bg-gradient-to-r from-[#e89a4d] to-white bg-clip-text text-transparent"
-                    style={{ filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))' }}
-                  >
+                  <p className="font-outfit text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.2] text-[#2c4a5f]">
                     Weil Bad-Design<br />nicht nur für Hotels<br />reserviert ist.
                   </p>
                 </div>
