@@ -67,7 +67,7 @@ export function NewsletterSection() {
 
           <p className="font-outfit text-sm text-white/60 mt-6">
             Datenschutzhinweis: Mit der Anmeldung stimmst du unserer{' '}
-            <a href="#" className="underline underline-offset-2 hover:text-white/80 transition-colors">
+            <a href={`${import.meta.env.BASE_URL}datenschutz.html`} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white/80 transition-colors">
               Datenschutzerklärung
             </a>{' '}
             zu.

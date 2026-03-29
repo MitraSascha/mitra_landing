@@ -1,0 +1,10 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /lp_v1.1/
+
+# Existierende Dateien und Ordner direkt ausliefern
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Alles andere → React SPA
+RewriteRule ^ index.html [QSA,L]

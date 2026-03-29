@@ -7,21 +7,25 @@ export function ProcessSection() {
       icon: <Box className="w-10 h-10" />,
       title: '3D-Visualisierung',
       text: 'Durch unsere 3D-Visualisierung siehst du was möglich ist und bekommst einen realistischen Vorgeschmack auf dein neues Mitra-Bad.',
+      bg: 'from-[#ef804e] to-[#e06e3a]',
     },
     {
       icon: <FileCheck className="w-10 h-10" />,
       title: 'Verbindliches Angebot',
       text: 'Durch ein verbindliches Angebot stellst Du sicher, dass der Preis von Anfang an klar ist.',
+      bg: 'from-[#1c3244] to-[#142537]',
     },
     {
       icon: <Calendar className="w-10 h-10" />,
       title: 'Klarer Ablaufplan',
       text: 'Durch einen klaren Ablauf- und Terminplan stellen wir gemeinsam sicher, dass du genau weißt wann dein neues Bad fertig ist.',
+      bg: 'from-[#9fcd99] to-[#85ba7f]',
     },
     {
       icon: <Sparkles className="w-10 h-10" />,
       title: 'Saubere Arbeit',
       text: '... und keine Sorge deine zu Hause bleibt sauber.',
+      bg: 'from-[#db9c4d] to-[#c88836]',
     },
   ];
 
@@ -56,7 +60,7 @@ export function ProcessSection() {
                     whileInView={{ scale: 1, rotate: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.25, ease: [0.34, 1.56, 0.64, 1] }}
-                    className="relative flex-shrink-0 w-20 h-20 bg-gradient-to-br from-[#e89a4d] to-[#d68938] text-white rounded-2xl flex items-center justify-center shadow-md"
+                    className={`relative flex-shrink-0 w-20 h-20 bg-gradient-to-br ${step.bg} text-white rounded-2xl flex items-center justify-center shadow-md`}
                   >
                     <span className="absolute top-2 left-2 font-outfit text-xs font-bold text-white/80 leading-none">
                       {String(index + 1).padStart(2, '0')}

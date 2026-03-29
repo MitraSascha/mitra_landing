@@ -125,7 +125,7 @@ export function HeroSection({ onQuizAnswered }: HeroSectionProps) {
                         : 'border-[#e89a4d] bg-[#e89a4d]/40 text-white backdrop-blur-2xl shadow-xl'
                       : showResult && answer.isCorrect
                       ? 'border-[#a8d4a8] bg-[#a8d4a8]/90 text-white shadow-2xl shadow-[#a8d4a8]/30'
-                      : 'border-white/90 bg-white/30 text-white shadow-lg shadow-black/20 ring-1 ring-white/30 hover:bg-white/45 hover:shadow-xl hover:shadow-black/30'
+                      : 'border-[#2c4a5f] bg-[#2c4a5f] text-white shadow-lg shadow-black/20 hover:bg-[#2c4a5f]/80 hover:shadow-xl hover:shadow-black/30'
                   } ${showResult ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                 >
                   <div className="flex items-center justify-between">

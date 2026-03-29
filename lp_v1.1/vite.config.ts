@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/lp_v1.0/',
+  base: '/lp_v1.1/',
 
   plugins: [
     react(),

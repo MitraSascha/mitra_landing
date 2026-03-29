@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Lightbulb, Wrench } from 'lucide-react';
+import bathroom1 from '../../assets/Bild neu 4.jpg';
 import bathroom2 from '../../assets/Bild neu 2.jpg';
 import bathroom3 from '../../assets/Bild neu 3.jpg';
 import bathroom4 from '../../assets/neues bild.jpg';
@@ -23,7 +24,7 @@ export function GallerySection() {
   const bathrooms: Bathroom[] = [
     {
       id: 1,
-      src: 'https://images.unsplash.com/photo-1758548157466-7c454382035a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBsdXh1cnklMjBiYXRocm9vbSUyMHdoaXRlJTIwYmF0aHR1YnxlbnwxfHx8fDE3NzIxODc0MDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      src: bathroom1,
       alt: 'Modernes Badezimmer mit freistehender weißer Badewanne',
       testimonial: {
         name: 'Lena',

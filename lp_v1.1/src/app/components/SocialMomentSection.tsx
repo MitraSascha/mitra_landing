@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import bathroomImg from '../../assets/Drop farbe.png';
+import bgFrame from '../../assets/Frame 7.1.png';
+import element9 from '../../assets/Element 9.svg';
 
 const quoteWords = '"Wow, seit wann habt ihr so ein krasses Bad!"'.split(' ');
 
@@ -11,7 +13,6 @@ export function SocialMomentSection() {
     offset: ['start start', 'end start'],
   });
 
-  const quoteY = useTransform(scrollYProgress, [0.15, 0.6], [0, -120]);
   const sublineOpacity = useTransform(scrollYProgress, [0.15, 0.5], [0, 1]);
   const sublineScale = useTransform(scrollYProgress, [0.15, 0.6], [0.3, 1]);
   const sublineY = useTransform(scrollYProgress, [0.15, 0.6], [100, 0]);
@@ -20,39 +21,48 @@ export function SocialMomentSection() {
     <>
       {/* Quote Section — pinned scroll */}
       <div ref={pinRef} className="relative h-[280vh] md:h-[300vh]">
-        <div className="sticky top-0 h-screen bg-[#a8d4a8] flex items-center justify-center px-6 md:px-16 lg:px-24 overflow-hidden">
-          <div className="w-full">
+        <div
+          className="sticky top-0 h-screen overflow-hidden relative"
+          style={{ backgroundImage: `url(${bgFrame})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        >
+          {/* Quote — direkt über der Shape positioniert */}
+          <div className="absolute left-6 md:left-16 lg:left-24 right-6 md:right-16 lg:right-24"
+               style={{ bottom: 'calc(44vh + 1.5rem)' }}>
+            <motion.blockquote
+              className="font-outfit text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight tracking-tight italic drop-shadow-lg"
+            >
+              {quoteWords.map((word, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.55, delay: i * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="inline-block mr-[0.25em]"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.blockquote>
+          </div>
 
-            {/* Crossfade-Container */}
-            <div className="relative flex items-center min-h-[220px] sm:min-h-[280px] md:min-h-[360px] text-left">
-              {/* Quote */}
-              <motion.blockquote
-                style={{ y: quoteY }}
-                className="font-outfit text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight tracking-tight italic"
-              >
-                {quoteWords.map((word, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.55, delay: i * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="inline-block mr-[0.25em]"
-                  >
-                    {word}
-                  </motion.span>
-                ))}
-              </motion.blockquote>
-
-              {/* Subline */}
+          {/* Shape + Subline — dauerhaft am unteren Rand */}
+          <div className="absolute bottom-0 left-0 right-0 h-[44vh] overflow-hidden">
+            <div className="relative w-full h-full">
+              {/* Element 9.svg Shape — immer sichtbar */}
+              <img
+                src={element9}
+                alt=""
+                className="absolute bottom-0 left-0 w-full h-full object-cover object-bottom"
+              />
+              {/* Subline — Endposition im grünen Bereich der Shape (untere ~38%) */}
               <motion.p
                 style={{ opacity: sublineOpacity, scale: sublineScale, y: sublineY }}
-                className="absolute inset-0 flex items-center justify-start font-outfit text-xl sm:text-2xl md:text-4xl lg:text-5xl text-[#2c4a5f] font-normal leading-tight tracking-tight"
+                className="absolute bottom-[12%] left-6 right-6 md:left-16 md:right-16 z-10 font-outfit text-lg sm:text-xl md:text-3xl lg:text-4xl text-[#2c4a5f] font-semibold leading-tight tracking-tight text-center"
               >
                 Der einzige Moment, den Du nicht mit uns planst, aber garantiert bekommst!
               </motion.p>
             </div>
-
           </div>
         </div>
       </div>
@@ -76,47 +86,24 @@ export function SocialMomentSection() {
             className="relative"
           >
 
-            {/* Mobile: Bild unten links */}
-            <div className="md:hidden relative min-h-[420px] overflow-hidden">
+            {/* Mobile: Text oben, Bild darunter */}
+            <div className="md:hidden flex flex-col items-start">
+              <p className="font-outfit text-4xl sm:text-5xl font-bold tracking-tight leading-[1.15] text-[#2c4a5f] text-left px-6 pt-10 pb-8">
+                Weil Bad-Design<br />nicht nur für Hotels<br />reserviert ist.
+              </p>
               <img
                 src={bathroomImg}
                 alt="Mitra Drop Logo"
-                className="absolute bottom-0 left-0 w-[100%] object-contain"
+                className="w-full object-contain"
               />
-              {/* Text oben rechts */}
-              <div className="absolute top-4 right-[67px] w-[52%]">
-                <div className="relative pl-4">
-                  <motion.div
-                    initial={{ scaleY: 0 }}
-                    whileInView={{ scaleY: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    style={{ originY: 0 }}
-                    className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#e89a4d] via-[#a8d4a8] to-[#2c4a5f] rounded-full"
-                  />
-                  <p className="font-outfit text-3xl sm:text-4xl font-bold tracking-tight leading-[1.2] text-[#2c4a5f]">
-                    Weil Bad-Design<br />nicht nur für Hotels<br />reserviert ist.
-                  </p>
-                </div>
-              </div>
             </div>
 
-            {/* Tablet + Desktop: Text oben rechts */}
-            <div className="hidden md:block relative min-h-[520px] lg:min-h-[640px]">
-              <div className="absolute top-8 right-[25%] w-[42%] lg:w-[38%]">
-                <div className="relative pl-6">
-                  <motion.div
-                    initial={{ scaleY: 0 }}
-                    whileInView={{ scaleY: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    style={{ originY: 0 }}
-                    className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-[#e89a4d] via-[#a8d4a8] to-[#2c4a5f] rounded-full"
-                  />
-                  <p className="font-outfit text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.2] text-[#2c4a5f]">
-                    Weil Bad-Design<br />nicht nur für Hotels<br />reserviert ist.
-                  </p>
-                </div>
+            {/* Tablet + Desktop: Bild links, Text rechts zentriert */}
+            <div className="hidden md:flex items-center min-h-[520px] lg:min-h-[640px]">
+              <div className="ml-auto w-1/2 lg:w-[45%] flex items-center justify-center pr-8 lg:pr-0">
+                <p className="font-outfit text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.15] text-[#2c4a5f]">
+                  Weil Bad-Design<br />nicht nur für Hotels<br />reserviert ist.
+                </p>
               </div>
             </div>
 
